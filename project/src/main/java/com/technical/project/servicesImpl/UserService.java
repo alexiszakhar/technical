@@ -23,10 +23,10 @@ import com.technical.project.iservices.IUserService;
 import com.technical.project.tools.UsersGender;
 
 /**
- * @author Alexis
  * The class which implements all of the method used
  * partly by the controller class and partly by the DAO class.
  * This class also treats all the work rules.
+ * @author Alexis
  *
  */
 @Service
