@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.technical.project.servicesImpl;
 
 import java.sql.Timestamp;
