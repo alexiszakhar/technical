@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "ef94f671-f55d-43a9-bb2d-d49d896e464d",
+		"name": "TechnicalFront",
+		"description": "This is the collection to test the front of the \"projectTest\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add a good new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Martin\",\r\n    \"birthDay\": \"1974-04-09 17:14:00\",\r\n    \"residenceCountry\": \"French\",\r\n    \"phoneNumber\": \"0512205056\",\r\n    \"gender\": \"Male\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a not good user by age",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Demoulin\",\r\n    \"birthDay\": \"2007-05-19 09:14:00\",\r\n    \"residenceCountry\": \"French\",\r\n    \"phoneNumber\": \"0620304011\",\r\n    \"gender\": \"Male\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a not good user by nationality",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Smith\",\r\n    \"birthDay\": \"1980-04-09 17:14:00\",\r\n    \"residenceCountry\": \"English\",\r\n    \"phoneNumber\": \"\",\r\n    \"gender\": \"Female\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by name existing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/user?userName=Moulin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Moulin",
+							"description": "The name to find"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by name not existing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/user?userName=Smith",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Smith",
+							"description": "This user doesn't exist in the BDD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id existing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/userID/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"userID",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id not existing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/userID/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"userID",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/technical/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"technical",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
