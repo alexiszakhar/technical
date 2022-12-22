@@ -82,7 +82,7 @@ public class UserController {
 	
 	
 	/**
-     * Manages the GET request on the /user/{username} end point, 
+     * Manages the GET request on the /user{username} end point, 
      * return the user if it exists or NOT_FOUND error if not.
      * RETURN :
      * - "OK" returns 200 Series.SUCCESSFUL,
@@ -91,7 +91,7 @@ public class UserController {
      * @param username <pre>String</pre> (the userName of the user to find)
      * @return ResponseEntity<User> (the user if exists, or NOT_FOUND error if not)
      */
-	@GetMapping(path = "/user")//@PathVariable("userName")   
+	@GetMapping(path = "/user")  
     public ResponseEntity<User> getUserByName(@RequestParam(required=true, value="userName") String username) {
 		
 		logger.info("Strating controller with variable value: {}", username);    	
@@ -168,6 +168,5 @@ public class UserController {
 			logger.info("The list is empty without data in the controller");
 			return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);
 		}		
-	}
-	
+	}	
 }
